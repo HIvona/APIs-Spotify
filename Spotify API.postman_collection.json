@@ -1,0 +1,2332 @@
+{
+	"info": {
+		"_postman_id": "841221f7-83c4-4342-899e-ea444c75178e",
+		"name": "Spotify API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29621751"
+	},
+	"item": [
+		{
+			"name": "Access_Token",
+			"item": [
+				{
+					"name": "Access_Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "31c37f08f76d4d53964158131d38259e",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "6deed6dec9434d36ba0939db7f9d6df6",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "user-library-read",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://accounts.spotify.com/api/token",
+							"protocol": "https",
+							"host": [
+								"accounts",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/albums/2qYkNaEeAbiarc0rwkjkh3?si=QfIWZFZRRdaHzEQtB5IfVA",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"albums",
+								"2qYkNaEeAbiarc0rwkjkh3"
+							],
+							"query": [
+								{
+									"key": "si",
+									"value": "QfIWZFZRRdaHzEQtB5IfVA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Several Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/albums?ids=6mUdeDZCsExyJLMdAfDuwh,2qYkNaEeAbiarc0rwkjkh3",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"albums"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "6mUdeDZCsExyJLMdAfDuwh,2qYkNaEeAbiarc0rwkjkh3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Album Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/albums/2qYkNaEeAbiarc0rwkjkh3/tracks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"albums",
+								"2qYkNaEeAbiarc0rwkjkh3",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User's Saved Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/albums",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Albums for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/albums?ids=5B4PYA7wNN4WdEXdIJu58a,5PY2mZGCOMezmWH7hiCwFH",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"albums"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5B4PYA7wNN4WdEXdIJu58a,5PY2mZGCOMezmWH7hiCwFH"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Users' Saved Albums",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/albums?ids=5lPny9X9M9wzioC0NIhjjc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"albums"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5lPny9X9M9wzioC0NIhjjc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.spotify.com/v1/me/albums/contains?ids=2qYkNaEeAbiarc0rwkjkh3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/albums/contains?ids=2qYkNaEeAbiarc0rwkjkh3",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"albums",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "2qYkNaEeAbiarc0rwkjkh3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New Releases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/browse/new-releases",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"browse",
+								"new-releases"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Artist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open.spotify.com/artist/7GVByFFfFJYCzK4d8ZyL6s?si=SS4CulcyTj6SyaaTslhTdA",
+							"protocol": "https",
+							"host": [
+								"open",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"artist",
+								"7GVByFFfFJYCzK4d8ZyL6s"
+							],
+							"query": [
+								{
+									"key": "si",
+									"value": "SS4CulcyTj6SyaaTslhTdA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/artists?ids=7GVByFFfFJYCzK4d8ZyL6s,0iC8O5ABswVUFiYwM94bu3",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "7GVByFFfFJYCzK4d8ZyL6s,0iC8O5ABswVUFiYwM94bu3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist's Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/artists/6wWVKhxIU2cEi0K81v7HvP?si=HVNxHXs1ROev-LO4jTyR-Q/albums",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"artists",
+								"6wWVKhxIU2cEi0K81v7HvP"
+							],
+							"query": [
+								{
+									"key": "si",
+									"value": "HVNxHXs1ROev-LO4jTyR-Q/albums"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist's Top Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/artists/0sfWl1dWLgEtMy9oFnNoDA/top-tracks?id=0iC8O5ABswVUFiYwM94bu3?si=e3SusO5TS0e0_O3hVT9pAA&market=ro",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"artists",
+								"0sfWl1dWLgEtMy9oFnNoDA",
+								"top-tracks"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0iC8O5ABswVUFiYwM94bu3?si=e3SusO5TS0e0_O3hVT9pAA"
+								},
+								{
+									"key": "market",
+									"value": "ro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artist's Related Artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/artists/0sfWl1dWLgEtMy9oFnNoDA/related-artists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"artists",
+								"0sfWl1dWLgEtMy9oFnNoDA",
+								"related-artists"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Audiobooks - available only in US, UK, CA, IE, AU, NZ",
+			"item": [
+				{
+					"name": "Get an Audiobook",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/audiobooks/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"audiobooks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Audiobooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/audiobooks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"audiobooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Audiobook Chapters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/audiobooks/{id}/chapters?id=",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"audiobooks",
+								"{id}",
+								"chapters"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Audiobooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/audiobooks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"audiobooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Audiobooks for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/audiobooks?ids=18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"audiobooks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Audiobooks",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/audiobooks?ids=18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"audiobooks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Audiobooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/audiobooks/contains?ids=18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"audiobooks",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get Several Browse Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/browse/categories?country=ro&limit=6&offset=0",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"browse",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "ro"
+								},
+								{
+									"key": "limit",
+									"value": "6"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Browse Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/browse/categories/?category_id=dinner",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"browse",
+								"categories",
+								""
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "dinner"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chapters - available only in US, UK, CA, IE, AU, NZ",
+			"item": [
+				{
+					"name": "Get a Chapter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/chapters?id=0D5wENdkdwbqlrHoaJ9g29",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"chapters"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0D5wENdkdwbqlrHoaJ9g29"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Chapters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/chapters?ids=0IsXVP0JmcB2adSE338GkK,3ZXb8FKZGU0EHALYX6uCzU,0D5wENdkdwbqlrHoaJ9g29",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"chapters"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "0IsXVP0JmcB2adSE338GkK,3ZXb8FKZGU0EHALYX6uCzU,0D5wENdkdwbqlrHoaJ9g29"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Episodes",
+			"item": [
+				{
+					"name": "Get Episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/episodes/?ids=5TJXRhL69MQryNxib4Ub6d",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"episodes",
+								""
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5TJXRhL69MQryNxib4Ub6d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/episodes?ids=2ERzUeio7d2XOGuZjJdsWz,5TJXRhL69MQryNxib4Ub6d",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"episodes"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "2ERzUeio7d2XOGuZjJdsWz,5TJXRhL69MQryNxib4Ub6d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/episodes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Episodes for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/episodes?ids=2ERzUeio7d2XOGuZjJdsWz",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"episodes"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "2ERzUeio7d2XOGuZjJdsWz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Episodes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/episodes?ids=2ERzUeio7d2XOGuZjJdsWz",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"episodes"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "2ERzUeio7d2XOGuZjJdsWz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/episodes/contains?ids=2ERzUeio7d2XOGuZjJdsWz,5TJXRhL69MQryNxib4Ub6d",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"episodes",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "2ERzUeio7d2XOGuZjJdsWz,5TJXRhL69MQryNxib4Ub6d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "Get Available Genre Seeds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/recommendations/available-genre-seeds",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"recommendations",
+								"available-genre-seeds"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Markets",
+			"item": [
+				{
+					"name": "Get Available Markets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/markets",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"markets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player",
+			"item": [
+				{
+					"name": "Get Playback State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer Playback",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player?device_ids=fa20879571b0220153cdde6287488fe209c2c4f5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player"
+							],
+							"query": [
+								{
+									"key": "device_ids",
+									"value": "fa20879571b0220153cdde6287488fe209c2c4f5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Available Devices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/devices",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Currently Playing Track",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/currently-playing",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"currently-playing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start/Resume Playback",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/play",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"play"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pause Playback",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/pause",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"pause"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skip To Next",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/next",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"next"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skip To Previous",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/previous",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"previous"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seek To Position",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/seek?position_ms=25000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"seek"
+							],
+							"query": [
+								{
+									"key": "position_ms",
+									"value": "25000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Repeat Mode",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/repeat?state=track",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"repeat"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "track"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Playback Volume",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/volume?volume_percent=100",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"volume"
+							],
+							"query": [
+								{
+									"key": "volume_percent",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Playback Shuffle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/shuffle?state=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"shuffle"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recently Played Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/recently-played",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"recently-played"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the User's Queue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/queue",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"queue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item to Playback Queue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/player/queue?uri=spotify:track:7MZM9KhwGQG8QJ4BycsnQn",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"player",
+								"queue"
+							],
+							"query": [
+								{
+									"key": "uri",
+									"value": "spotify:track:7MZM9KhwGQG8QJ4BycsnQn"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Playlists",
+			"item": [
+				{
+					"name": "Get Playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/3gwP6qJaPzRYGLMngvk7mj",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"3gwP6qJaPzRYGLMngvk7mj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Playlist Details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ivtest\",\r\n    \"description\": \"Updated playlist description\",\r\n    \"public\": false\r\n}"
+						},
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/3gwP6qJaPzRYGLMngvk7mj",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"3gwP6qJaPzRYGLMngvk7mj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/3gwP6qJaPzRYGLMngvk7mj/tracks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"3gwP6qJaPzRYGLMngvk7mj",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Playlist Items",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/3gwP6qJaPzRYGLMngvk7mj/tracks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"3gwP6qJaPzRYGLMngvk7mj",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Items to Playlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uris\": [\r\n        \"spotify:track:2ispbUjxKz1K2j5zE9eNwu\"\r\n    ],\r\n    \"position\": 0\r\n}"
+						},
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/3gwP6qJaPzRYGLMngvk7mj/tracks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"3gwP6qJaPzRYGLMngvk7mj",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Playlist Items",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uris\": [\r\n        \"spotify:track:2ispbUjxKz1K2j5zE9eNwu\"\r\n    ],\r\n    \"position\": 0\r\n}"
+						},
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/3gwP6qJaPzRYGLMngvk7mj/tracks?uri=spotify:track:7MZM9KhwGQG8QJ4BycsnQn",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"3gwP6qJaPzRYGLMngvk7mj",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "uri",
+									"value": "spotify:track:7MZM9KhwGQG8QJ4BycsnQn"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User's Playlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/playlists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Playlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/users/q8znsni6r7qws7ik4ahqbcsge/playlists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"users",
+								"q8znsni6r7qws7ik4ahqbcsge",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Playlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Postman test\",\r\n    \"description\": \"New playlist description\",\r\n    \"public\": false\r\n}"
+						},
+						"url": {
+							"raw": "https://api.spotify.com/v1/users/q8znsni6r7qws7ik4ahqbcsge/playlists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"users",
+								"q8znsni6r7qws7ik4ahqbcsge",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Featured Playlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/browse/featured-playlists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"browse",
+								"featured-playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category's Playlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/browse/categories/party/playlists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"browse",
+								"categories",
+								"party",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist Cover Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/7Cfrr1DUnckfSjbwfAXHTc/images",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"7Cfrr1DUnckfSjbwfAXHTc",
+								"images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search for Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/search?q=Departure Songs&type=album",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Departure Songs"
+								},
+								{
+									"key": "type",
+									"value": "album"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shows",
+			"item": []
+		},
+		{
+			"name": "Tracks",
+			"item": [
+				{
+					"name": "Get Track",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/tracks/635gf107rRSjSZsWC9MzoM",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tracks",
+								"635gf107rRSjSZsWC9MzoM"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/tracks?ids=6UiAN2iP3pqD0vniMK3LOW,2i5BnUkZXqDAUB5OB3qcQJ",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "6UiAN2iP3pqD0vniMK3LOW,2i5BnUkZXqDAUB5OB3qcQJ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/tracks?limit=5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Tracks for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/tracks?ids=5YdnOm5990Kfq1Jodws98B,0zKbDrEXKpnExhGQRe9dxt",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5YdnOm5990Kfq1Jodws98B,0zKbDrEXKpnExhGQRe9dxt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Tracks",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/tracks?ids=5YdnOm5990Kfq1Jodws98B,0zKbDrEXKpnExhGQRe9dxt",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5YdnOm5990Kfq1Jodws98B,0zKbDrEXKpnExhGQRe9dxt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/tracks/contains?ids=0FDY2EHOv32kUoqplU1hdY",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"tracks",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "0FDY2EHOv32kUoqplU1hdY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tracks' Audio Features",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/audio-features?ids=3T5kYazNB0f72vswYOSq4l",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"audio-features"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "3T5kYazNB0f72vswYOSq4l"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Track's Audio Features",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/audio-features/3T5kYazNB0f72vswYOSq4l",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"audio-features",
+								"3T5kYazNB0f72vswYOSq4l"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Track's Audio Analysis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/audio-analysis/3T5kYazNB0f72vswYOSq4l",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"audio-analysis",
+								"3T5kYazNB0f72vswYOSq4l"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recommendations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical,country&seed_tracks=0c6xIDDpzE81m2q797ordA",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"recommendations"
+							],
+							"query": [
+								{
+									"key": "seed_artists",
+									"value": "4NHQUGzhtTLFvgF5SZesLK"
+								},
+								{
+									"key": "seed_genres",
+									"value": "classical,country"
+								},
+								{
+									"key": "seed_tracks",
+									"value": "0c6xIDDpzE81m2q797ordA"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Current User's Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Top Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/top/?type=artists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"top",
+								""
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artists"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/users/q8znsni6r7qws7ik4ahqbcsge",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"users",
+								"q8znsni6r7qws7ik4ahqbcsge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Playlist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/7Cfrr1DUnckfSjbwfAXHTc/followers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"7Cfrr1DUnckfSjbwfAXHTc",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Playlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/7Cfrr1DUnckfSjbwfAXHTc/followers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"7Cfrr1DUnckfSjbwfAXHTc",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Followed Artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/following",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"following"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Artists or Users",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/following?type=artist&ids=5J94Bk05Jkmul9Ptgpz7iz",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "5J94Bk05Jkmul9Ptgpz7iz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Artists or Users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/following?type=artist&ids=30TrHDLNCKQVTYWOn9QqOC",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "30TrHDLNCKQVTYWOn9QqOC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check If User Follows Artists or Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/me/following/contains?type=artist&ids=5J94Bk05Jkmul9Ptgpz7iz",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"me",
+								"following",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "5J94Bk05Jkmul9Ptgpz7iz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check if Users Follow Playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/playlists/4PBmwAbeFyAHEyOtRaDs43/followers/contains?ids=andra",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"playlists",
+								"4PBmwAbeFyAHEyOtRaDs43",
+								"followers",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "andra"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "user-read-private user-library-read user-library-modify user-read-playback-position user-read-playback-state user-modify-playback-state user-read-recently-played playlist-modify-public playlist-modify-private user-top-read user-follow-read user-follow-modify",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://accounts.spotify.com/authorize",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenName",
+				"value": "user_library_modify",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://oauth.pstmn.io/v1/browser-callback",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://accounts.spotify.com/api/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 200ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(200);",
+					"});"
+				]
+			}
+		}
+	]
+}
